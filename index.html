@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atendia – Automatización con inteligencia artificial para negocios</title>
+<meta name="description" content="Atendia crea asistentes virtuales con inteligencia artificial que atienden a los clientes de su negocio por WhatsApp, a cualquier hora, y pasan la conversación a una persona cuando hace falta.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Atendia – Servicios integrales en automatización con Inteligencia Artificial">
+<meta property="og:description" content="Asistentes virtuales para atender a sus clientes por WhatsApp, a cualquier hora.">
+<meta name="theme-color" content="#0f6b6e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f6b6e'/%3E%3Cpath d='M16 20a6 6 0 0 1 6-6h20a6 6 0 0 1 6 6v14a6 6 0 0 1-6 6H30l-9 8v-8h-0a6 6 0 0 1-5-6z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --paper:#f3f6f4; --ink:#10222b; --muted:#4a6068; --teal:#0f6b6e; --teal-dark:#0a4f52;
+  --mist:#dce9e6; --line:#c5d6d2; --marigold:#f2b230; --card:#ffffff;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0e1a1f; --ink:#e8f0ee; --muted:#9db3b0; --teal:#3fb3b0; --teal-dark:#2a8f8c;
+    --mist:#16282d; --line:#27403f; --card:#13242a;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:Charter,"Bitstream Charter","Sitka Text",Cambria,serif;line-height:1.15;margin:0}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--marigold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{padding:22px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:Charter,Cambria,serif;font-weight:700;font-size:1.4rem}
+.logo{width:34px;height:34px;border-radius:9px;background:var(--teal);display:grid;place-items:center}
+.logo svg{width:20px;height:20px;fill:#fff}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:40px 0 72px}
+.hero h1{font-size:clamp(2rem,4.6vw,3.2rem);letter-spacing:-.01em}
+.lead{font-size:1.15rem;color:var(--muted);margin:20px 0 28px;max-width:34em}
+.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;padding:13px 26px;border-radius:999px;font-weight:600}
+.btn:hover{background:var(--teal-dark)}
+.chat{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 12px 30px rgba(16,34,43,.08)}
+.chat-h{font-size:.85rem;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:14px;display:flex;justify-content:space-between}
+.msg{max-width:84%;padding:10px 14px;border-radius:14px;margin:8px 0;font-size:.95rem;opacity:0;animation:in .5s forwards}
+.me{background:var(--mist);margin-left:auto;border-bottom-right-radius:4px}
+.bot{background:var(--teal);color:#fff;border-bottom-left-radius:4px}
+.m1{animation-delay:.3s}.m2{animation-delay:1.3s}.m3{animation-delay:2.4s}.m4{animation-delay:3.4s}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.note{font-size:.8rem;color:var(--muted);margin:12px 0 0}
+section{padding:64px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:28px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card h3{font-size:1.2rem;margin-bottom:8px}
+.card p{margin:0;color:var(--muted)}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:18px;max-width:720px}
+.steps li{counter-increment:s;position:relative;padding-left:56px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--marigold);color:#10222b;font-weight:700;display:grid;place-items:center}
+.steps strong{display:block;font-family:Charter,Cambria,serif;font-size:1.15rem}
+.steps span{color:var(--muted)}
+.contact p{margin:6px 0}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:.85rem;color:var(--muted)}
+footer p{margin:4px 0}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:32px;padding-bottom:48px}
+  .grid3{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .msg{animation:none;opacity:1}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-5 4v-4H6a2 2 0 0 1-2-2z"/></svg></span>
+      Atendia
+    </div>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <h1>Servicios integrales en automatización con Inteligencia Artificial</h1>
+        <p class="lead">Creamos asistentes virtuales que atienden a los clientes de su negocio por WhatsApp: responden al instante, a cualquier hora, y pasan la conversación a una persona cuando hace falta.</p>
+        <a class="btn" href="mailto:atendia.ec@outlook.com">Escríbanos</a>
+      </div>
+      <div>
+        <div class="chat" role="img" aria-label="Conversación de ejemplo entre un cliente y un asistente virtual">
+          <div class="chat-h"><span>Zapatería de ejemplo</span><span>en línea</span></div>
+          <div class="msg me m1">Buenas noches, ¿tienen las zapatillas negras en talla 40?</div>
+          <div class="msg bot m2">Buenas noches. Sí, están disponibles en talla 40. Prefiere retirarlas o recibirlas en su domicilio?</div>
+          <div class="msg me m3">Quiero hablar con una persona.</div>
+          <div class="msg bot m4">Con gusto. Paso su caso a una persona del equipo para que lo atienda.</div>
+        </div>
+        <p class="note">Conversación ilustrativa con datos ficticios.</p>
+      </div>
+    </div>
+
+    <section id="servicio">
+      <h2>Qué hace su asistente</h2>
+      <div class="grid3">
+        <div class="card"><h3>Atiende a toda hora</h3><p>Responde consultas sobre productos, precios y horarios en cualquier momento, sin hacer esperar a nadie.</p></div>
+        <div class="card"><h3>Habla como su negocio</h3><p>Usa el tono y las reglas que usted defina, y no inventa información que no tenga.</p></div>
+        <div class="card"><h3>Avisa a una persona</h3><p>Cuando hay un reclamo, un pago o una consulta especial, pasa la conversación a su equipo.</p></div>
+      </div>
+    </section>
+
+    <section id="proceso">
+      <h2>Cómo trabajamos</h2>
+      <ol class="steps">
+        <li><strong>Conocemos su negocio</strong><span>Definimos qué ofrece, cómo atiende y qué debe resolver el asistente.</span></li>
+        <li><strong>Configuramos y probamos</strong><span>Armamos el asistente y lo probamos con conversaciones reales antes de ponerlo en marcha.</span></li>
+        <li><strong>Lo acompañamos</strong><span>Ajustamos las respuestas con el uso diario para que mejore con el tiempo.</span></li>
+      </ol>
+    </section>
+
+    <section id="contacto" class="contact">
+      <h2>Hablemos de su negocio</h2>
+      <p>Escríbanos y le contamos cómo podría funcionar en su caso.</p>
+      <p><a href="mailto:atendia.ec@outlook.com">atendia.ec@outlook.com</a></p>
+      <p>Ecuador</p>
+    </section>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <p>© 2026 Atendia</p>
+    <p>WhatsApp es una marca de Meta Platforms, Inc. Atendia es un servicio independiente y no está afiliado ni respaldado por Meta ni por WhatsApp.</p>
+  </div>
+</footer>
+</body>
+</html>
